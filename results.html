@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compatibility Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Compatibility Result</h1>
+    </header>
+    <main class="container">
+        <section class="result-section">
+            <div class="zodiac-info">
+                <h2>Person 1</h2>
+                <div class="info-item">
+                    <img src="{{ url_for('static', filename='images/' + zodiac_image1) }}" alt="{{ zodiac_sign1 }}" class="zodiac-img">
+                    <p><strong>Zodiac Sign:</strong> {{ zodiac_sign1 }}</p>
+                </div>
+                <p><strong>Element:</strong> {{ element1 }}</p>
+                <div class="info-item">
+                    <img src="{{ url_for('static', filename='images/' + birthstone_image1) }}" alt="{{ birthstone1 }}" class="birthstone-img">
+                    <p><strong>Birthstone:</strong> {{ birthstone1 }} - {{ benefits1 }}</p>
+                </div>
+                <p><strong>Description:</strong> {{ description1 }}</p>
+                <p><strong>Famous Celebrities:</strong> {{ ", ".join(celebrities1) }}</p>
+            </div>
+
+            <hr class="separator">
+
+            <div class="zodiac-info">
+                <h2>Person 2</h2>
+                <div class="info-item">
+                    <img src="{{ url_for('static', filename='images/' + zodiac_image2) }}" alt="{{ zodiac_sign2 }}" class="zodiac-img">
+                    <p><strong>Zodiac Sign:</strong> {{ zodiac_sign2 }}</p>
+                </div>
+                <p><strong>Element:</strong> {{ element2 }}</p>
+                <div class="info-item">
+                    <img src="{{ url_for('static', filename='images/' + birthstone_image2) }}" alt="{{ birthstone2 }}" class="birthstone-img">
+                    <p><strong>Birthstone:</strong> {{ birthstone2 }} - {{ benefits2 }}</p>
+                </div>
+                <p><strong>Description:</strong> {{ description2 }}</p>
+                <p><strong>Famous Celebrities:</strong> {{ ", ".join(celebrities2) }}</p>
+            </div>
+
+            <div class="compatibility-info">
+                <h2>Compatibility</h2>
+                <p>{{ compatibility_result }}</p>
+            </div>
+
+            <div class="form-action">
+                <a href="/" class="button">Check Another Compatibility</a>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
